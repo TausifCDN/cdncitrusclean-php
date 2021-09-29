@@ -12,8 +12,11 @@ class Home extends BaseController
 		$request = service('request');
 		$db = \Config\Database::connect();
 
-		$sql = "SELECT * FROM category_master order by id asc limit 3";
+		$sql = "SELECT * FROM category_master order by id asc  ";
 		$categories = $db->query($sql)->getResult('array');   
+
+		// $sql = "SELECT * FROM category_master order by id asc ";
+		// $prods = $db->query($sql)->getResult('array'); 
 
 		$sql = "SELECT * FROM products where category_id=4";
 		$products = $db->query($sql)->getResult('array');
@@ -28,6 +31,7 @@ class Home extends BaseController
 
 		$data["products"]=$products;
 		$data["categories"]=$categories;
+		// $data["categories"]=$prods;
 		$temp=$data["categories"][1];
 		$data["categories"][1]=$data["categories"][0];
 		$data["categories"][0]=$temp;

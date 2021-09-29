@@ -45,7 +45,23 @@
             </div>
         </div>
         <!--<div class="banner-pic2" style=" background: url(<?=base_url();?>/assets/images/citrus-clean.jpg);"></div>-->
-        <div class="banner-pic2" style=" background: url(<?=base_url();?>/assets/images/<?php echo $homeData->banner_image;?>);"></div>
+        <!-- <div class="banner-pic2" style=" background: url(<?=base_url();?>/assets/images/<?php echo $homeData->banner_image;?>);"></div> -->
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -135,7 +151,12 @@
 
                    <div class="col-12 col-lg-12 col-md-12">
                    <div class="owl-carousel owl-theme" id="carousel_packages">
+               
+               
                 <?php foreach($categories as $c) { ?>
+
+                
+
 
                 <div class="text-center item my_box" >
                     <div class="select_link">
@@ -144,7 +165,7 @@
                         <div class="theme-listing-info">
                             <h3 class="theme-listing-name"><?=$c['category_name']?></h3>
                             <a href="<?php echo base_url()."/products?id=".$c['id'];?>">Select</a>
-                      </div>                                
+                        </div>                                
                     </div>
                   </div>
                 </div>
@@ -160,6 +181,78 @@
                     </div>
                   </div>
                 </div> -->
+                <?php } ?>
+            </div>
+
+            <br/>
+            <h2>Citrus Man Industrial Product Line</h2>
+
+            <div class="container">
+
+                
+                <?php for($in=0; $in<count($categories);$in+=3) { ?>
+                  
+                    <div class="row">
+
+
+                        <div class="text-center item my_box col-sm" >
+                            <div class="select_link">
+                                <div class="hover-overlay">                                       
+                                    <img class="img-fluid" src="<?php echo base_url();?>/uploads/category/<?= $categories[$in]['category_image'] ?>" style="height: 250px;">
+                                    <div class="theme-listing-info" >
+                                        <h3 class="theme-listing-name" >                                
+                                            <?=$categories[$in]['category_name']?>
+                                        </h3>
+                                            <a href="<?php echo base_url()."/products?id=".$categories[$in]['id'];?>">Select</a>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center item my_box col-sm" >
+                            <div class="select_link">
+                                <div class="hover-overlay">                                       
+                                    <img class="img-fluid" src="<?php echo base_url();?>/uploads/category/<?= $categories[$in]['category_image'] ?>" style="height: 250px;">
+                                    <div class="theme-listing-info" >
+                                        <h3 class="theme-listing-name" >
+                                            <?=$categories[$in+1]['category_name']?>
+                                        </h3>                                   
+                                        <a href="<?php echo base_url()."/products?id=".$categories[$in]['id'];?>">Select</a>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center item my_box col-sm" >
+                            <div class="select_link">
+                                <div class="hover-overlay">                                       
+                                    <img class="img-fluid" src="<?php echo base_url();?>/uploads/category/<?= $categories[$in]['category_image'] ?>" style="height: 250px;">
+                                    <div class="theme-listing-info" >
+                                        <h3 class="theme-listing-name" >
+                                            <?=$categories[$in+2]['category_name']?>
+                                        </h3> 
+                                        <a href="<?php echo base_url()."/products?id=".$categories[$in]['id'];?>">Select</a>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- <div class="col-sm theme-listing-info">
+                            <h3>
+                                <?=$categories[$in]['category_name']?>
+                            </h3>
+                        </div>
+                        <div class="col-sm theme-listing-info">
+                            <h3>
+                                <?=$categories[$in+1]['category_name']?>
+                            </h3>                        
+                        </div>
+                        <div class="col-sm theme-listing-info">
+                            <h3>
+                                <?=$categories[$in+2]['category_name']?>
+                            </h3>                        
+                        </div> -->
+                    </div>
                 <?php } ?>
             </div>
         </div>
